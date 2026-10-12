@@ -1,0 +1,13 @@
+# Netlify settings: no build step, publish the folder as it is.
+[build]
+  publish = "."
+
+# The page itself must never be cached, so a Publish from the editor shows up right away.
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache"
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
