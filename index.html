@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Long Way Round Portfolio</title>
+<title>Long Way Round</title>
 <meta name="description" content="I design brands and interfaces that hold up on rough terrain. Ride the trail to find my projects, or skip straight to the work.">
-<meta property="og:title" content="Long Way Round Portfolio">
+<meta property="og:title" content="Long Way Round">
 <meta property="og:description" content="I design brands and interfaces that hold up on rough terrain. Ride the trail to find my projects, or skip straight to the work.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%230E1318%22%2F%3E%3Cpath%20d%3D%22M14%2040l8-16h22l-8%2016z%22%20fill%3D%22%23F4F0E8%22%2F%3E%3Cpath%20d%3D%22M40%2040l8-16h6l-8%2016z%22%20fill%3D%22%23F2B33D%22%2F%3E%3C%2Fsvg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%230E1318%22%2F%3E%3Cpath%20d%3D%22M14%2040l8-16h22l-8%2016z%22%20fill%3D%22%23F4F0E8%22%2F%3E%3Cpath%20d%3D%22M40%2040l8-16h6l-8%2016z%22%20fill%3D%22%23ff9999%22%2F%3E%3C%2Fsvg%3E">
 <link id="site-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style id="site-style">
 /* Layout: cinematic game hero (journey through six Himalayan stages, day and night), roadbook work grid, about, contact; owner-only editor drawer. */
@@ -229,6 +229,59 @@ footer { border-top: 1px solid var(--line); padding-block: 26px; color: var(--mu
 footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 footer .mono { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
 
+
+/* ---------- Project pages (#/work/<slug>) ---------- */
+.cs-bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.cs-bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 14px; }
+.cs-bar .nav a { color: var(--muted); }
+.cs-bar .nav a:first-child { color: var(--ink); }
+.cs-head { padding-block: clamp(48px, 8vw, 96px) clamp(28px, 4vw, 44px); }
+.cs-head .eyebrow { color: var(--accent); }
+.cs-head h1 { font-size: clamp(56px, 10vw, 140px); font-weight: 900; text-transform: uppercase; margin-top: 14px; }
+.cs-lede { font-size: clamp(19px, 2vw, 24px); line-height: 1.45; max-width: 46ch; margin: 22px 0 0; font-weight: 500; }
+.cs-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin: 36px 0 0; border-top: 1px solid var(--line); }
+.cs-meta div { padding: 14px 16px 14px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.cs-meta dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.cs-meta dd { margin: 4px 0 0; font-weight: 600; overflow-wrap: anywhere; }
+.cs-cover { aspect-ratio: 16 / 9; max-width: 100%; border-radius: 6px; overflow: hidden; position: relative; display: grid; place-items: center; background-color: var(--surface); border: 1px solid var(--line); }
+.cs-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cs-cover .glyph { font-family: var(--f-display); font-weight: 900; font-size: clamp(90px, 16vw, 220px); text-transform: uppercase; color: var(--ink); line-height: 1; }
+.cs-body { display: grid; gap: clamp(36px, 5vw, 56px); padding-block: clamp(56px, 8vw, 96px); }
+.cs-sec { padding-block: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: clamp(16px, 4vw, 56px); align-items: start; }
+.cs-sec h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 800; text-transform: uppercase; position: sticky; top: 90px; }
+.cs-txt p { margin: 0 0 16px; max-width: 64ch; font-size: 18px; }
+.cs-txt p:last-child { margin-bottom: 0; }
+@media (max-width: 760px) { .cs-sec { grid-template-columns: 1fr; } .cs-sec h2 { position: static; } }
+.cs-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); border-block: 2px solid var(--ink); margin-bottom: clamp(48px, 7vw, 80px); }
+.cs-results div { padding: 24px 20px 24px 0; display: grid; gap: 6px; min-width: 0; }
+.cs-results div + div { border-left: 1px solid var(--line); padding-left: 20px; }
+.cs-results b { font-family: var(--f-display); font-weight: 900; font-size: clamp(44px, 5vw, 64px); line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+.cs-results span { color: var(--muted); font-size: 15px; }
+@media (max-width: 600px) { .cs-results div + div { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; } }
+.cs-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 2vw, 20px); margin-bottom: clamp(48px, 7vw, 80px); }
+.cs-gallery figure { margin: 0; min-width: 0; }
+.cs-gallery figure.wide { grid-column: 1 / -1; }
+.cs-gallery img { width: 100%; height: auto; display: block; border-radius: 6px; border: 1px solid var(--line); }
+.cs-gallery figcaption { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; color: var(--muted); margin-top: 8px; }
+@media (max-width: 600px) { .cs-gallery { grid-template-columns: 1fr; } }
+.cs-ext { margin-bottom: clamp(40px, 6vw, 64px); }
+.cs-pn { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-bottom: clamp(56px, 8vw, 96px); }
+.cs-pn a { text-decoration: none; border: 1.5px solid var(--line); border-radius: 6px; padding: 18px 20px; display: grid; gap: 4px; min-width: 0; }
+.cs-pn a:hover { border-color: var(--accent); }
+.cs-pn a.nx { text-align: right; }
+.cs-pn span { font-family: var(--f-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.cs-pn b { font-family: var(--f-display); font-weight: 800; font-size: clamp(24px, 3vw, 34px); text-transform: uppercase; line-height: 1; overflow-wrap: anywhere; }
+.cs-more { background: var(--surface); border-block: 1px solid var(--line); }
+.cs-more .h2 { margin: 0 0 32px; }
+/* editor: nested lists */
+.subl { display: grid; gap: 10px; }
+.subitem { border: 1px dashed var(--line); border-radius: 8px; padding: 10px; display: grid; gap: 10px; background: var(--bg); }
+.subhd { display: flex; align-items: center; gap: 8px; }
+.subhd .n { font-family: var(--f-mono); font-size: 11px; color: var(--muted); }
+.subhd .t { flex: 1; min-width: 0; font-weight: 600; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.subhd .ctl { display: flex; gap: 4px; }
+.subl > .abtn { justify-self: start; }
+
 /* ---------- Owner-only editor ---------- */
 .edit-fab { position: fixed; left: 16px; bottom: calc(80px + env(safe-area-inset-bottom, 0px)); z-index: 40; font: 600 13px/1 var(--f-body); letter-spacing: .1em; text-transform: uppercase; padding: 13px 16px; border-radius: 999px; border: 0; background: var(--accent); color: var(--accent-ink); box-shadow: 0 8px 24px rgba(0,0,0,.3); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
 .edit-fab svg { width: 15px; height: 15px; }
@@ -285,11 +338,16 @@ footer .mono { font-family: var(--f-mono); font-size: 12px; letter-spacing: .1em
 @media (prefers-reduced-motion: reduce) { .card:hover .cover .glyph, .card:hover .cover img { transform: none; } .toast, .stagecard { transition: none; } .finish .panel { animation: none; } }
 
 @media (pointer: coarse), (max-width: 900px) { .edit-fab { left: auto; right: 12px; bottom: auto; top: calc(12px + env(safe-area-inset-top, 0px)); padding: 10px 13px; } }
+@media (max-width: 760px) { .cs-more .work { grid-template-columns: 1fr 1fr; gap: 22px 14px; } .cs-more .card p, .cs-more .card .meta span:last-child { display: none; } .cs-more .card h3 { font-size: 18px; } }
+/* Hide the headline while someone is riding */
+.hero-copy { transition: opacity .5s ease, transform .5s ease, visibility 0s linear 0s; }
+.hero.riding .hero-copy { opacity: 0; transform: translateY(-14px); visibility: hidden; pointer-events: none; transition: opacity .45s ease, transform .45s ease, visibility 0s linear .45s; }
+@media (prefers-reduced-motion: reduce) { .hero-copy, .hero.riding .hero-copy { transition: none; transform: none; } }
 </style>
 </head>
 <body>
 <div id="root"></div>
-<script type="application/json" id="site-content">{"site": {"name": "Your Name", "title": "Long Way Round Portfolio", "role": "Visual & product designer · ADV rider", "headlineA": "Designing for the", "headlineEm": "long way", "headlineB": "round.", "lede": "I design brands and interfaces that hold up on rough terrain. Ride the trail to find my projects, or skip straight to the work.", "ctaPrimary": "See the work", "ctaSecondary": "Get in touch", "navWork": "Work", "navAbout": "About", "navContact": "Contact", "accent": "#F2B33D", "footer": "Designed between rides.", "tagline": "Keep the shiny side up"}, "rider": {"image": "img/rider.webp", "bike": "Triumph Scrambler 1200"}, "stages": [{"name": "Key Monastery", "region": "Spiti", "altitude": 4166, "mode": "day", "image": "img/stage-key.webp", "focus": 0.7}, {"name": "Kaza", "region": "Spiti", "altitude": 3800, "mode": "day", "image": "img/stage-kaza.webp", "focus": 0.66}, {"name": "Umling La", "region": "Ladakh", "altitude": 5798, "mode": "night", "image": "img/stage-umlingla.webp", "focus": 0.5}, {"name": "Hanle Observatory", "region": "Ladakh", "altitude": 4500, "mode": "night", "image": "img/stage-hanle.webp", "focus": 0.6}, {"name": "Pangong Tso", "region": "Ladakh", "altitude": 4225, "mode": "day", "image": "img/stage-pangong.webp", "focus": 0.5}, {"name": "Thiksey Monastery", "region": "Ladakh", "altitude": 3600, "mode": "day", "image": "img/stage-thiksey.webp", "focus": 0.72}], "work": {"eyebrow": "Selected work · 2023 – 2026", "heading": "The roadbook", "note": "Every project is a flag on the trail up top. Sample projects for now: replace them from the editor."}, "projects": [{"title": "Basecamp", "initials": "Bc", "type": "UI / UX", "year": "2026", "length": "10 weeks", "description": "Trip-planning app for weekend riders: routes, fuel stops, weather.", "link": "", "cover": ""}, {"title": "Ridgeline Coffee", "initials": "Rc", "type": "Branding", "year": "2025", "length": "6 weeks", "description": "Identity and packaging for a small-batch mountain roastery.", "link": "", "cover": ""}, {"title": "Fieldnotes", "initials": "Fn", "type": "Editorial", "year": "2025", "length": "8 weeks", "description": "Editorial design system for a travel magazine's print and web issues.", "link": "", "cover": ""}, {"title": "Gearloop", "initials": "Gl", "type": "Web design", "year": "2024", "length": "12 weeks", "description": "Marketplace for buying and selling used riding gear.", "link": "", "cover": ""}, {"title": "Monsoon Series", "initials": "Ms", "type": "Illustration", "year": "2024", "length": "4 weeks", "description": "Poster series on the first rains, screen-printed in three colours.", "link": "", "cover": ""}, {"title": "Trailhead", "initials": "Th", "type": "Product", "year": "2023", "length": "9 weeks", "description": "Operations dashboard for a motorcycle tour company.", "link": "", "cover": ""}], "about": {"eyebrow": "About", "heading": "Two kinds of terrain", "lead": "I'm a designer who works the way I ride: plan the route, read the ground, and adjust when the trail washes out.", "body": "Most of my work is brand identity and digital product design for small teams who need things to look sharp and work hard. Long rides taught me to pack light, so my design does the same: fewer parts, each one earning its place.\n\nOff the clock I'm on a Triumph Scrambler 1200, usually heading somewhere the tarmac gives up.", "skills": "Brand identity, UI / UX, Design systems, Prototyping, Illustration, Figma", "logTitle": "Ride log", "log": [{"label": "Machine", "value": "Triumph Scrambler 1200"}, {"label": "Riding since", "value": "Add your year"}, {"label": "Highest pass", "value": "Add your highest"}, {"label": "Longest day", "value": "Add your longest"}, {"label": "Favourite route", "value": "Add your route"}, {"label": "Always packed", "value": "Tyre plugs, sketchbook"}]}, "contact": {"eyebrow": "Contact", "heading": "Got a project?", "headingEm": "Let's ride.", "text": "Open to freelance brand and product design work, and always happy to hear about a good route.", "email": "hello@yourname.com", "socials": [{"label": "Behance", "url": "https://www.behance.net/"}, {"label": "Dribbble", "url": "https://dribbble.com/"}, {"label": "Instagram", "url": "https://www.instagram.com/"}, {"label": "LinkedIn", "url": "https://www.linkedin.com/"}]}, "reward": {"enabled": true, "kicker": "Route complete", "heading": "You've earned a free design consultation", "text": "30 minutes with me on your brand, product or website. Pick a time that suits you and I'll get a confirmation straight away.", "button": "Book your free call", "bookingUrl": ""}}</script>
+<script type="application/json" id="site-content">{"site": {"name": "KISHORE P", "title": "Long Way Round", "role": "Brand Designer", "headlineA": "Designing for the", "headlineEm": "long way", "headlineB": "round.", "lede": "I design brands and interfaces that hold up on rough terrain. Ride the trail to find my projects, or skip straight to the work.", "ctaPrimary": "See the work", "ctaSecondary": "Get in touch", "navWork": "Work", "navAbout": "About", "navContact": "Contact", "accent": "#ff9999", "footer": "Designed between rides.", "tagline": "Keep the shiny side up"}, "rider": {"image": "img/rider.webp", "bike": "Triumph Scrambler 1200"}, "stages": [{"name": "Key Monastery", "region": "Spiti", "altitude": 4166, "mode": "day", "image": "img/stage-key.webp", "focus": 0.7}, {"name": "Kaza", "region": "Spiti", "altitude": 3800, "mode": "day", "image": "img/stage-kaza.webp", "focus": 0.66}, {"name": "Umling La", "region": "Ladakh", "altitude": 5798, "mode": "night", "image": "img/stage-umlingla.webp", "focus": 0.5}, {"name": "Hanle Observatory", "region": "Ladakh", "altitude": 4500, "mode": "night", "image": "img/stage-hanle.webp", "focus": 0.6}, {"name": "Pangong Tso", "region": "Ladakh", "altitude": 4225, "mode": "day", "image": "img/stage-pangong.webp", "focus": 0.5}, {"name": "Thiksey Monastery", "region": "Ladakh", "altitude": 3600, "mode": "day", "image": "img/stage-thiksey.webp", "focus": 0.72}], "work": {"eyebrow": "Selected work · 2023 – 2026", "heading": "The roadbook", "note": "Every project is a flag on the trail up top, and each one has its own page. Sample projects for now: replace them from the editor.", "caseLabel": "Case study", "moreHeading": "More work", "backLabel": "All work"}, "projects": [{"title": "Basecamp", "initials": "Bc", "type": "UI / UX", "year": "2026", "length": "10 weeks", "description": "Trip-planning app for weekend riders: routes, fuel stops, weather.", "link": "", "cover": "", "results": [{"value": "400", "label": "Beta riders"}, {"value": "−70%", "label": "Time to plan a route"}, {"value": "4.8", "label": "App store rating"}], "gallery": [], "client": "Sample client · Basecamp Rides", "role": "Product designer", "team": "1 designer, 2 engineers", "intro": "A trip-planning app that helps weekend riders plan routes, fuel stops and weather windows in one place.", "overview": "Sample text: replace this with your own story. Basecamp started as a spreadsheet a riding group shared before every trip.", "challenge": "Riders were juggling maps, weather apps and group chats. Fuel ranges and closed passes caught people out.", "approach": "I interviewed 12 riders, mapped how they plan a weekend, and prototyped a single timeline view that combines route, fuel and weather.", "outcome": "The beta launched to 400 riders. Planning a two-day route dropped from an evening to about 20 minutes.", "linkLabel": ""}, {"title": "Ridgeline Coffee", "initials": "Rc", "type": "Branding", "year": "2025", "length": "6 weeks", "description": "Identity and packaging for a small-batch mountain roastery.", "link": "", "cover": "", "results": [{"value": "3", "label": "Cafés stocking it"}, {"value": "+35%", "label": "Online sales in 3 months"}], "gallery": [], "client": "Sample client · Ridgeline Coffee", "role": "Brand designer", "team": "Solo", "intro": "Identity and packaging for a small-batch roastery working with high-altitude farms.", "overview": "Sample text: replace this with your own story.", "challenge": "The roastery needed to stand out on crowded café shelves without looking like every other craft brand.", "approach": "Contour lines from each farm's map became the pattern system, with one colour per altitude band.", "outcome": "Launched across 3 cafés and an online shop.", "linkLabel": ""}, {"title": "Fieldnotes", "initials": "Fn", "type": "Editorial", "year": "2025", "length": "8 weeks", "description": "Editorial design system for a travel magazine's print and web issues.", "link": "", "cover": "", "results": [], "gallery": [], "client": "", "role": "", "team": "", "intro": "Editorial design system for a travel magazine's print and web issues.", "overview": "Sample text: write the story of this project here. Separate paragraphs with a blank line.", "challenge": "", "approach": "", "outcome": "", "linkLabel": ""}, {"title": "Gearloop", "initials": "Gl", "type": "Web design", "year": "2024", "length": "12 weeks", "description": "Marketplace for buying and selling used riding gear.", "link": "", "cover": "", "results": [], "gallery": [], "client": "", "role": "", "team": "", "intro": "Marketplace for buying and selling used riding gear.", "overview": "Sample text: write the story of this project here. Separate paragraphs with a blank line.", "challenge": "", "approach": "", "outcome": "", "linkLabel": ""}, {"title": "Monsoon Series", "initials": "Ms", "type": "Illustration", "year": "2024", "length": "4 weeks", "description": "Poster series on the first rains, screen-printed in three colours.", "link": "", "cover": "", "results": [], "gallery": [], "client": "", "role": "", "team": "", "intro": "Poster series on the first rains, screen-printed in three colours.", "overview": "Sample text: write the story of this project here. Separate paragraphs with a blank line.", "challenge": "", "approach": "", "outcome": "", "linkLabel": ""}, {"title": "Trailhead", "initials": "Th", "type": "Product", "year": "2023", "length": "9 weeks", "description": "Operations dashboard for a motorcycle tour company.", "link": "", "cover": "", "results": [], "gallery": [], "client": "", "role": "", "team": "", "intro": "Operations dashboard for a motorcycle tour company.", "overview": "Sample text: write the story of this project here. Separate paragraphs with a blank line.", "challenge": "", "approach": "", "outcome": "", "linkLabel": ""}], "about": {"eyebrow": "About", "heading": "Two kinds of terrain", "lead": "I'm a designer who works the way I ride: plan the route, read the ground, and adjust when the trail washes out.", "body": "Most of my work is brand identity and digital product design for small teams who need things to look sharp and work hard. Long rides taught me to pack light, so my design does the same: fewer parts, each one earning its place.\n\nOff the clock I'm on a Triumph Scrambler 1200, usually heading somewhere the tarmac gives up.", "skills": "Brand identity, UI / UX, Design systems, Prototyping, Illustration, Figma", "logTitle": "Ride log", "log": [{"label": "Machine", "value": "Triumph Scrambler 1200"}, {"label": "Riding since", "value": "Add your year"}, {"label": "Highest pass", "value": "Add your highest"}, {"label": "Longest day", "value": "Add your longest"}, {"label": "Favourite route", "value": "Add your route"}, {"label": "Always packed", "value": "Tyre plugs, sketchbook"}]}, "contact": {"eyebrow": "Contact", "heading": "Got a project?", "headingEm": "Let's ride.", "text": "Open to freelance brand and product design work, and always happy to hear about a good route.", "email": "hello@yourname.com", "socials": [{"label": "Behance", "url": "https://www.behance.net/"}, {"label": "Dribbble", "url": "https://dribbble.com/"}, {"label": "Instagram", "url": "https://www.instagram.com/"}, {"label": "LinkedIn", "url": "https://www.linkedin.com/"}]}, "reward": {"enabled": true, "kicker": "Route complete", "heading": "You've earned a free design consultation", "text": "30 minutes with me on your brand, product or website. Pick a time that suits you and I'll get a confirmation straight away.", "button": "Book your free call", "bookingUrl": ""}}</script>
 <script id="site-app">
 (() => {
 "use strict";
@@ -313,6 +371,7 @@ function ensure(c) {
   c.site = c.site || {}; c.rider = c.rider || {}; c.work = c.work || {}; c.about = c.about || {}; c.contact = c.contact || {}; c.reward = c.reward || {};
   if (!Array.isArray(c.stages) || !c.stages.length) c.stages = [{ name: "Trail", region: "", altitude: 0, mode: "day", image: "", focus: 0.5 }];
   if (!Array.isArray(c.projects)) c.projects = [];
+  c.projects.forEach(p => { if (!Array.isArray(p.results)) p.results = []; if (!Array.isArray(p.gallery)) p.gallery = []; });
   if (!Array.isArray(c.about.log)) c.about.log = [];
   if (!Array.isArray(c.contact.socials)) c.contact.socials = [];
   return c;
@@ -400,15 +459,10 @@ root.innerHTML = `
     <div class="bio"><p class="eyebrow" data-bind="about.eyebrow"></p><h2 class="h2" style="margin-bottom:28px" data-bind="about.heading"></h2><p class="big" data-bind="about.lead"></p><div id="about-body"></div><ul class="kit" id="kit" aria-label="Skills"></ul></div>
     <aside class="logbook" aria-label="Ride log"><header><h3 data-bind="about.logTitle"></h3></header><dl id="log"></dl></aside>
   </div></section>
-  <section class="contact" id="contact"><div class="wrap">
-    <p class="eyebrow" data-bind="contact.eyebrow"></p>
-    <h2 id="contact-h"></h2>
-    <p class="txt" data-bind="contact.text"></p>
-    <div class="mailrow"><span class="mail" id="mail"></span><button class="btn primary" id="copy" type="button">Copy email</button></div>
-    <div class="socials" id="socials"></div>
-  </div></section>
+  <section class="contact" id="contact"><div class="wrap" id="contact-in"></div></section>
 </main>
-<footer><div class="wrap"><span id="foot-l"></span><span class="mono" data-bind="site.tagline"></span></div></footer>
+<footer id="site-foot"><div class="wrap"><span class="foot-l"></span><span class="mono" data-bind="site.tagline"></span></div></footer>
+<div id="case" hidden></div>
 <button class="edit-fab" id="edit-fab" type="button" hidden>${ICON.edit}Edit site</button>
 <div class="admin" id="admin" hidden></div>`;
 const hero = $("#top");
@@ -430,26 +484,87 @@ function applyContent() {
   const n = C.projects.length;
   $("#pc-goal").textContent = `Find all ${n} project flags`;
   $("#route").innerHTML = C.projects.map(() => "<li></li>").join("");
-  $("#work-grid").innerHTML = C.projects.map((p, i) => {
-    const href = p.link ? safeUrl(p.link) : `#p-${i + 1}`;
-    const ext = p.link && /^https?:/i.test(href) ? ' target="_blank" rel="noopener"' : "";
-    return `<a class="card" id="p-${i + 1}" href="${esc(href)}"${ext}>
-      <div class="cover v${(i + 1) % 6}">${p.cover ? `<img src="${esc(p.cover)}" alt="" loading="lazy">` : `<span class="glyph">${esc(p.initials || (p.title || "").slice(0, 2))}</span>`}<span class="wp">FLAG ${i + 1}/${n}</span><span class="stamp">Found on the trail</span></div>
-      <div class="meta"><div class="row"><span>${esc(p.type)}</span><span>${esc([p.year, p.length].filter(Boolean).join(" · "))}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p></div></a>`;
-  }).join("");
+  $("#work-grid").innerHTML = C.projects.map((p, i) => cardHTML(i, true)).join("");
   $("#about-body").innerHTML = String(C.about.body || "").split(/\n\s*\n/).filter(s => s.trim()).map(s => `<p>${esc(s.trim())}</p>`).join("");
   $("#kit").innerHTML = String(C.about.skills || "").split(",").map(s => s.trim()).filter(Boolean).map(s => `<li>${esc(s)}</li>`).join("");
   $("#log").innerHTML = C.about.log.map(r => `<div class="item"><dt>${esc(r.label)}</dt><dd>${esc(r.value)}</dd></div>`).join("");
-  $("#contact-h").innerHTML = `${esc(C.contact.heading)} ${C.contact.headingEm ? `<em>${esc(C.contact.headingEm)}</em>` : ""}`;
-  $("#mail").textContent = C.contact.email || "";
-  $("#socials").innerHTML = C.contact.socials.filter(s => s.label).map(s => `<a href="${esc(safeUrl(s.url))}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join("");
-  $("#foot-l").textContent = `© ${new Date().getFullYear()} ${S.name || ""}. ${S.footer || ""}`.trim();
+  $("#contact-in").innerHTML = contactHTML();
+  document.querySelectorAll(".foot-l").forEach(el => { el.textContent = footText(); });
   renderFound();
   game.contentChanged();
+  if (!caseEl.hidden) route(true);
 }
 
-$("#copy").addEventListener("click", e => {
-  const btn = e.currentTarget, mail = $("#mail");
+/* ---------- project pages: #/work/<slug> ---------- */
+const caseEl = $("#case");
+const slugify = t => String(t || "project").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "project";
+function slugs() { const seen = {}; return C.projects.map(p => { const b = slugify(p.slug || p.title); let s = b, k = 2; while (seen[s]) s = b + "-" + k++; seen[s] = 1; return s; }); }
+const projectHref = i => "#/work/" + slugs()[i];
+const footText = () => `© ${new Date().getFullYear()} ${C.site.name || ""}. ${C.site.footer || ""}`.trim();
+const paras = t => String(t || "").split(/\n\s*\n/).map(x => x.trim()).filter(Boolean).map(x => `<p>${esc(x)}</p>`).join("");
+function cardHTML(i, main) {
+  const p = C.projects[i], n = C.projects.length;
+  return `<a class="card" ${main ? `id="p-${i + 1}"` : ""} href="${projectHref(i)}">
+      <div class="cover v${(i + 1) % 6}">${p.cover ? `<img src="${esc(p.cover)}" alt="" loading="lazy">` : `<span class="glyph">${esc(p.initials || (p.title || "").slice(0, 2))}</span>`}${main ? `<span class="wp">FLAG ${i + 1}/${n}</span><span class="stamp">Found on the trail</span>` : ""}</div>
+      <div class="meta"><div class="row"><span>${esc(p.type)}</span><span>${esc([p.year, p.length].filter(Boolean).join(" · "))}</span></div><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p></div></a>`;
+}
+function contactHTML() {
+  const K = C.contact;
+  return `<p class="eyebrow">${esc(K.eyebrow)}</p>
+    <h2>${esc(K.heading)} ${K.headingEm ? `<em>${esc(K.headingEm)}</em>` : ""}</h2>
+    <p class="txt">${esc(K.text)}</p>
+    ${K.email ? `<div class="mailrow"><span class="mail">${esc(K.email)}</span><button class="btn primary copy-mail" type="button">Copy email</button></div>` : ""}
+    <div class="socials">${K.socials.filter(x => x.label).map(x => `<a href="${esc(safeUrl(x.url))}" target="_blank" rel="noopener">${esc(x.label)}</a>`).join("")}</div>`;
+}
+function caseHTML(i) {
+  const p = C.projects[i], n = C.projects.length, sl = slugs(), S = C.site;
+  const meta = [["Client", p.client], ["Role", p.role], ["Year", p.year], ["Duration", p.length], ["Discipline", p.type], ["Team", p.team]].filter(([, v]) => v && String(v).trim());
+  const secs = [["Overview", p.overview], ["Challenge", p.challenge], ["Approach", p.approach], ["Outcome", p.outcome]].filter(([, v]) => v && String(v).trim());
+  const results = p.results.filter(r => r.value || r.label), gallery = p.gallery.filter(g => g.image);
+  const prev = (i - 1 + n) % n, next = (i + 1) % n, others = C.projects.map((_, j) => j).filter(j => j !== i);
+  return `<div class="cs-bar"><div class="wrap">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"><i></i><i></i></span><span>${esc(S.name)}</span></a>
+      <nav class="nav" aria-label="Main"><a href="#work">← ${esc(C.work.backLabel || "All work")}</a><a href="#about">${esc(S.navAbout)}</a><a href="#cs-contact">${esc(S.navContact)}</a></nav></div></div>
+    <article class="cs">
+      <header class="cs-head wrap">
+        <p class="eyebrow">${esc(C.work.caseLabel || "Case study")} · ${String(i + 1).padStart(2, "0")} / ${String(n).padStart(2, "0")}</p>
+        <h1>${esc(p.title)}</h1>
+        ${p.intro || p.description ? `<p class="cs-lede">${esc(p.intro || p.description)}</p>` : ""}
+        ${meta.length ? `<dl class="cs-meta">${meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : ""}
+      </header>
+      <div class="wrap"><div class="cs-cover v${(i + 1) % 6}">${p.cover ? `<img src="${esc(p.cover)}" alt="${esc(p.title)}">` : `<span class="glyph">${esc(p.initials || "")}</span>`}</div></div>
+      ${secs.length ? `<div class="cs-body wrap">${secs.map(([k, v]) => `<section class="cs-sec"><h2>${k}</h2><div class="cs-txt">${paras(v)}</div></section>`).join("")}</div>` : ""}
+      ${results.length ? `<div class="wrap"><div class="cs-results">${results.map(r => `<div><b>${esc(r.value)}</b><span>${esc(r.label)}</span></div>`).join("")}</div></div>` : ""}
+      ${gallery.length ? `<div class="wrap"><div class="cs-gallery">${gallery.map(g => `<figure class="${g.wide === false ? "" : "wide"}"><img src="${esc(g.image)}" alt="${esc(g.caption || p.title)}" loading="lazy">${g.caption ? `<figcaption>${esc(g.caption)}</figcaption>` : ""}</figure>`).join("")}</div></div>` : ""}
+      ${p.link ? `<div class="wrap cs-ext"><a class="btn" href="${esc(safeUrl(p.link))}" target="_blank" rel="noopener">${esc(p.linkLabel || "View the live project")} ↗</a></div>` : ""}
+      ${n > 1 ? `<nav class="cs-pn wrap" aria-label="More projects"><a href="#/work/${sl[prev]}"><span>← Previous</span><b>${esc(C.projects[prev].title)}</b></a><a class="nx" href="#/work/${sl[next]}"><span>Next →</span><b>${esc(C.projects[next].title)}</b></a></nav>` : ""}
+      ${others.length ? `<section class="cs-more"><div class="wrap"><h2 class="h2">${esc(C.work.moreHeading || "More work")}</h2><div class="work">${others.map(j => cardHTML(j, false)).join("")}</div></div></section>` : ""}
+      <section class="contact" id="cs-contact"><div class="wrap">${contactHTML()}</div></section>
+      <footer><div class="wrap"><span class="foot-l">${esc(footText())}</span><span class="mono">${esc(S.tagline)}</span></div></footer>
+    </article>`;
+}
+let shownCase = -1;
+function route(keepScroll) {
+  const m = location.hash.match(/^#\/work\/([a-z0-9-]+)/);
+  const i = m ? slugs().indexOf(m[1]) : -1;
+  if (i >= 0) {
+    caseEl.innerHTML = caseHTML(i);
+    hero.hidden = true; $("main").hidden = true; $("#site-foot").hidden = true; caseEl.hidden = false;
+    document.title = `${C.projects[i].title} · ${C.site.name || C.site.title || ""}`;
+    if (!keepScroll && shownCase !== i) scrollTo(0, 0);
+    shownCase = i;
+    return;
+  }
+  const wasCase = !caseEl.hidden;
+  caseEl.hidden = true; caseEl.innerHTML = ""; hero.hidden = false; $("main").hidden = false; $("#site-foot").hidden = false; shownCase = -1;
+  document.title = C.site.title || C.site.name || "Portfolio";
+  if (wasCase) { const id = location.hash.slice(1), el = id && document.getElementById(id); requestAnimationFrame(() => (el ? el.scrollIntoView() : scrollTo(0, 0))); }
+}
+addEventListener("hashchange", () => route());
+
+document.addEventListener("click", e => {
+  const btn = e.target.closest && e.target.closest(".copy-mail"); if (!btn) return;
+  const mail = btn.parentElement.querySelector(".mail");
   const done = m => { btn.textContent = m; setTimeout(() => (btn.textContent = "Copy email"), 1800); };
   const sel = () => { const r = document.createRange(); r.selectNodeContents(mail); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done("Selected, press Ctrl+C"); };
   try { navigator.clipboard.writeText(mail.textContent).then(() => done("Copied"), sel); } catch (_) { sel(); }
@@ -610,8 +725,7 @@ const game = (() => {
     if (card) { card.classList.remove("flash"); void card.offsetWidth; card.classList.add("flash"); }
     puff(f.x, 6);
     if (G.got >= n) { finish(); return; }
-    const href = p.link ? safeUrl(p.link) : `#p-${f.i + 1}`;
-    toast(`<b>FLAG ${f.i + 1}/${n}</b><span>${esc(p.title)}${p.type ? " · " + esc(p.type) : ""}</span><a href="${esc(href)}"${/^https?:/i.test(href) ? ' target="_blank" rel="noopener"' : ""}>View →</a>`);
+    toast(`<b>FLAG ${f.i + 1}/${n}</b><span>${esc(p.title)}${p.type ? " · " + esc(p.type) : ""}</span><a href="${projectHref(f.i)}">View →</a>`);
     setStage(G.got);
   }
   function finish() {
@@ -639,6 +753,10 @@ const game = (() => {
   function crash(loop) { G.state = "crash"; G.crashT = 0; G.loop = !!loop; puff(px() + 50, 16); hud(true); }
   function update(dt) {
     G.t += dt;
+    // While riding, the headline and buttons fade out so the trail is clear; they come back at the finish.
+    const riding = G.state === "play" || G.state === "crash";
+    if (riding !== G.riding) { G.riding = riding; hero.classList.toggle("riding", riding); }
+    G.scrim = (G.scrim ?? 1) + ((riding ? .18 : 1) - (G.scrim ?? 1)) * Math.min(1, dt * 2.5);
     if (G.trans < 1) G.trans = Math.min(1, (performance.now() - (G.transStart || 0)) / 1600);
     if (G.state === "crash") { G.crashT += dt; G.v = G.v > 0 ? Math.max(0, G.v - 900 * dt) : Math.min(0, G.v + 900 * dt); }
     else if (G.state === "play") {
@@ -721,7 +839,7 @@ const game = (() => {
     ctx.restore();
     if (NA > 0) for (const p of STARS) { const a = NA * (.35 + .35 * Math.sin(G.t * 2 + p.ph)); if (a > .02) C2(p.x * W, p.y * H, p.r, `rgba(235,240,255,${a.toFixed(3)})`); }
     // scrim behind the copy
-    const a = .74;
+    const a = .74 * (G.scrim ?? 1);
     if (W >= 760) { g = ctx.createLinearGradient(0, 0, W * .62, 0); g.addColorStop(0, `rgba(7,11,19,${a})`); g.addColorStop(.5, `rgba(7,11,19,${a * .6})`); g.addColorStop(1, "rgba(7,11,19,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, W * .62, H); }
     else { const yEnd = H - 250; g = ctx.createLinearGradient(0, 0, 0, yEnd); g.addColorStop(0, `rgba(7,11,19,${a})`); g.addColorStop(.82, `rgba(7,11,19,${a * .9})`); g.addColorStop(1, "rgba(7,11,19,0)"); ctx.fillStyle = g; ctx.fillRect(0, 0, W, yEnd); }
   }
@@ -944,10 +1062,14 @@ const SECTIONS = [
   { id: "stages", label: "Stages", intro: "One background per stage. Collecting a flag moves the ride to the next stage with a crossfade. The first stage is where the ride starts.", list: "stages", itemTitle: "name",
     blank: { name: "New stage", region: "", altitude: 0, mode: "day", image: "", focus: .5 },
     item: [["name", "Place", "text"], ["region", "Region", "text"], ["altitude", "Altitude (m)", "number"], ["mode", "Time of day", "select:day=Day|night=Night"], ["image", "Background image", "image:bg"], ["focus", "Focus point (left to right)", "range"]] },
-  { id: "projects", label: "Projects", intro: "Each project is a card in the Work section and a flag on the trail, in this order.", list: "projects", itemTitle: "title",
+  { id: "projects", label: "Projects", intro: "Each project is a card in the Work section, a flag on the trail and its own page on your site, in this order. Leave a case-study field empty to hide that part of the page.", list: "projects", itemTitle: "title",
     blank: { title: "New project", initials: "NP", type: "", year: "", length: "", description: "", link: "", cover: "" },
-    item: [["title", "Title", "text"], ["initials", "Flag letters (2–3)", "text"], ["type", "Type", "text"], ["year", "Year", "text"], ["length", "Duration", "text"], ["description", "One-line description", "textarea"], ["link", "Link to the case study", "url"], ["cover", "Cover image", "image:cover"]] },
-  { id: "work", label: "Work", intro: "The heading and note above your project cards.", fields: [["work.eyebrow", "Small label", "text"], ["work.heading", "Heading", "text"], ["work.note", "Note", "textarea"]] },
+    item: [["", "Card", "head"], ["title", "Title", "text"], ["initials", "Flag letters (2–3)", "text"], ["type", "Discipline", "text"], ["year", "Year", "text"], ["length", "Duration", "text"], ["description", "One-line description (card)", "textarea"], ["cover", "Cover image", "image:cover"],
+      ["", "Project page", "head"], ["intro", "Opening paragraph", "textarea"], ["client", "Client", "text"], ["role", "Your role", "text"], ["team", "Team", "text"],
+      ["overview", "Overview", "textarea"], ["challenge", "Challenge", "textarea"], ["approach", "Approach", "textarea"], ["outcome", "Outcome", "textarea"],
+      ["results", "Results (big numbers)", "sublist:results"], ["gallery", "Gallery images", "sublist:gallery"],
+      ["link", "Optional outside link (live site, prototype)", "url"], ["linkLabel", "Outside link button text", "text"]] },
+  { id: "work", label: "Work", intro: "The heading and note above your project cards, and the labels on project pages.", fields: [["work.eyebrow", "Small label", "text"], ["work.heading", "Heading", "text"], ["work.note", "Note", "textarea"], ["work.caseLabel", "Project page label", "text"], ["work.moreHeading", "Other projects heading", "text"], ["work.backLabel", "Back link", "text"]] },
   { id: "about", label: "About", intro: "Your bio, skills and ride log. Separate paragraphs with a blank line; separate skills with commas.", fields: [
     ["about.eyebrow", "Small label", "text"], ["about.heading", "Heading", "text"], ["about.lead", "Opening line", "textarea"], ["about.body", "Bio", "textarea"], ["about.skills", "Skills (comma separated)", "text"], ["about.logTitle", "Ride log title", "text"],
   ], list: "about.log", listLabel: "Ride log entries", itemTitle: "label", blank: { label: "New entry", value: "" }, item: [["label", "Label", "text"], ["value", "Value", "text"]] },
@@ -965,7 +1087,19 @@ const GH_KEY = "lwr-github";
 const tabList = () => SECTIONS.concat(mode === "github" ? [{ id: "connect", label: "Publishing" }] : []);
 const DRAFT_KEY = "lwr-draft";
 
+const SUBLISTS = {
+  results: { add: "result", title: "value", blank: { value: "+40%", label: "What the number means" }, item: [["value", "Number", "text"], ["label", "What it measures", "text"]] },
+  gallery: { add: "image", title: "caption", blank: { image: "", caption: "", wide: true }, item: [["image", "Image", "image:gallery"], ["caption", "Caption", "text"], ["wide", "Full width (off = half width, two side by side)", "toggle"]] },
+};
 function fieldHTML(path, label, type, value) {
+  if (type === "head") return `<h3 class="sub">${esc(label)}</h3>`;
+  if (type.startsWith("sublist:")) {
+    const def = SUBLISTS[type.slice(8)], arr = Array.isArray(value) ? value : [];
+    return `<div class="fld"><span>${esc(label)}</span><div class="subl">${arr.map((it, j) => `<div class="subitem"><div class="subhd"><span class="n">${String(j + 1).padStart(2, "0")}</span><span class="t">${esc(it[def.title] || "Untitled")}</span>
+      <span class="ctl"><button class="abtn sm" type="button" data-list="${esc(path)}" data-move="${j}" data-dir="-1" aria-label="Move up" ${j === 0 ? "disabled" : ""}>↑</button><button class="abtn sm" type="button" data-list="${esc(path)}" data-move="${j}" data-dir="1" aria-label="Move down" ${j === arr.length - 1 ? "disabled" : ""}>↓</button><button class="abtn sm danger" type="button" data-list="${esc(path)}" data-del="${j}" aria-label="Remove">✕</button></span></div>
+      ${def.item.map(([k, l, t]) => fieldHTML(`${path}.${j}.${k}`, l, t, it[k] ?? "")).join("")}</div>`).join("")}
+      <button class="abtn sm" type="button" data-list="${esc(path)}" data-sub="${type.slice(8)}" data-add>+ Add ${def.add}</button></div></div>`;
+  }
   const id = "f-" + path.replace(/\./g, "-");
   if (type === "textarea") return `<label class="fld"><span>${esc(label)}</span><textarea id="${id}" data-path="${esc(path)}">${esc(value)}</textarea></label>`;
   if (type === "color") return `<label class="fld"><span>${esc(label)}</span><span class="colorrow"><input type="color" id="${id}" data-path="${esc(path)}" value="${esc(/^#[0-9a-f]{6}$/i.test(value) ? value : "#F2B33D")}"><input type="text" data-path="${esc(path)}" value="${esc(value)}" aria-label="${esc(label)} hex"></span></label>`;
@@ -977,7 +1111,7 @@ function fieldHTML(path, label, type, value) {
     const kind = type.slice(6);
     return `<div class="fld"><span>${esc(label)}</span><div class="imgf"><div class="thumb ${kind === "rider" ? "contain" : ""}" style="${value ? `background-image:url('${esc(value)}')` : ""}">${value ? "" : "No image"}</div><div class="acts">
       <label class="abtn sm">Upload…<input type="file" accept="image/*" data-img="${esc(path)}" data-kind="${kind}"></label>${value ? `<button class="abtn sm danger" type="button" data-clear="${esc(path)}">Remove</button>` : ""}</div></div>
-      ${kind === "bg" ? "<small>Wide landscape, 1600–1920 px. Resized automatically.</small>" : kind === "cover" ? "<small>Shown at 4:3 on the card.</small>" : "<small>Must match the framing of the current rider image for the wheels to line up.</small>"}</div>`;
+      ${kind === "bg" ? "<small>Wide landscape, 1600–1920 px. Resized automatically.</small>" : kind === "cover" ? "<small>Shown at 4:3 on the card and wide at the top of the project page.</small>" : kind === "gallery" ? "<small>Any shape. Resized to 1800 px wide.</small>" : "<small>Must match the framing of the current rider image for the wheels to line up.</small>"}</div>`;
   }
   return `<label class="fld"><span>${esc(label)}</span><input type="${type === "url" ? "url" : type === "email" ? "email" : "text"}" id="${id}" data-path="${esc(path)}" value="${esc(value)}"></label>`;
 }
@@ -1064,7 +1198,9 @@ function onAdminInput(e) {
   setPath(C, path, v);
   if (el.type === "color") { const tx = el.parentElement.querySelector('input[type=text]'); if (tx) tx.value = v; }
   if (el.type === "range") { const b = el.closest(".fld").querySelector("b"); if (b) b.textContent = Math.round(v * 100) + "%"; }
-  const item = el.closest(".item"); if (item) { const sec = SECTIONS.find(x => x.id === tab); const t = item.querySelector("summary .t"); if (t && path.endsWith("." + sec.itemTitle)) t.textContent = v || "Untitled"; }
+  const sub = el.closest(".subitem"), item = el.closest(".item");
+  if (sub) { const t = sub.querySelector(".subhd .t"); if (t && /\.(value|caption)$/.test(path)) t.textContent = v || "Untitled"; }
+  else if (item) { const sec = SECTIONS.find(x => x.id === tab) || {}; const t = item.querySelector("summary .t"); if (t && sec.itemTitle && path.endsWith("." + sec.itemTitle)) t.textContent = v || "Untitled"; }
   changed();
 }
 async function onAdminChange(e) {
@@ -1074,7 +1210,7 @@ async function onAdminChange(e) {
   const kind = el.dataset.kind, path = el.dataset.img;
   const m = $("#a-msg"); if (m) m.textContent = "Resizing image…";
   try {
-    const url = await fileToDataUrl(el.files[0], kind === "bg" ? 1920 : kind === "cover" ? 1000 : 1100, kind === "rider");
+    const url = await fileToDataUrl(el.files[0], kind === "bg" ? 1920 : kind === "gallery" ? 1800 : kind === "cover" ? 1600 : 1100, kind === "rider");
     setPath(C, path, url);
     const det = el.closest(".item"); openItem = det ? (SECTIONS.find(x => x.id === tab).list + det.dataset.item) : null;
     renderAdmin(); changed();
@@ -1097,12 +1233,14 @@ function fileToDataUrl(file, maxW, alpha) {
 }
 function onAdminClick(e) {
   const b = e.target.closest("button, [data-tab]"); if (!b) return;
-  const sec = SECTIONS.find(x => x.id === tab);
+  const sec = SECTIONS.find(x => x.id === tab) || {};
   if (b.dataset.tab) { tab = b.dataset.tab; openItem = null; adminEl.querySelectorAll("[data-tab]").forEach(t => t.setAttribute("aria-selected", t.dataset.tab === tab)); renderAdmin(); $(".body", adminEl).scrollTop = 0; return; }
   if (b.dataset.clear) { setPath(C, b.dataset.clear, ""); renderAdmin(); changed(); return; }
-  if (b.dataset.add !== undefined) { const arr = getPath(C, sec.list); arr.push(clone(sec.blank)); openItem = sec.list + (arr.length - 1); renderAdmin(); changed(); return; }
-  if (b.dataset.del !== undefined) { e.preventDefault(); const arr = getPath(C, sec.list); const i = +b.dataset.del; if (sec.list === "stages" && arr.length <= 1) return; if (b.dataset.confirm !== "1") { b.dataset.confirm = "1"; b.textContent = "Remove?"; setTimeout(() => { if (b.isConnected) { b.dataset.confirm = ""; b.textContent = "✕"; } }, 2500); return; } arr.splice(i, 1); openItem = null; renderAdmin(); changed(); return; }
-  if (b.dataset.move !== undefined) { e.preventDefault(); const arr = getPath(C, sec.list), i = +b.dataset.move, j = i + +b.dataset.dir; if (j < 0 || j >= arr.length) return; [arr[i], arr[j]] = [arr[j], arr[i]]; openItem = sec.list + j; renderAdmin(); changed(); return; }
+  const lp = b.dataset.list || sec.list; // list being edited: a section list, or a nested one like projects.2.gallery
+  const keepOpen = () => { openItem = b.dataset.list ? sec.list + b.dataset.list.split(".")[1] : null; };
+  if (b.dataset.add !== undefined) { let arr = getPath(C, lp); if (!Array.isArray(arr)) { arr = []; setPath(C, lp, arr); } arr.push(clone(b.dataset.sub ? SUBLISTS[b.dataset.sub].blank : sec.blank)); if (b.dataset.list) keepOpen(); else openItem = sec.list + (arr.length - 1); renderAdmin(); changed(); return; }
+  if (b.dataset.del !== undefined) { e.preventDefault(); const arr = getPath(C, lp); const i = +b.dataset.del; if (lp === "stages" && arr.length <= 1) return; if (b.dataset.confirm !== "1") { b.dataset.confirm = "1"; b.textContent = "Remove?"; setTimeout(() => { if (b.isConnected) { b.dataset.confirm = ""; b.textContent = "✕"; } }, 2500); return; } arr.splice(i, 1); if (b.dataset.list) keepOpen(); else openItem = null; renderAdmin(); changed(); return; }
+  if (b.dataset.move !== undefined) { e.preventDefault(); const arr = getPath(C, lp), i = +b.dataset.move, j = i + +b.dataset.dir; if (j < 0 || j >= arr.length) return; [arr[i], arr[j]] = [arr[j], arr[i]]; if (b.dataset.list) keepOpen(); else openItem = sec.list + j; renderAdmin(); changed(); return; }
   const act = b.dataset.act;
   if (act === "gh-save") { saveConnection(); return; }
   if (act === "gh-forget") { store.del(GH_KEY); renderConnect(); return; }
@@ -1164,6 +1302,8 @@ async function publishGitHub() {
       }
       o[k] = uploaded.get(v);
     }
+    updateStatus("Saving your content…");
+    await ghPutFile(gh, "content.json", b64utf8(JSON.stringify(out, null, 2) + "\n"), "Update content from the editor");
     updateStatus("Saving the page…");
     await ghPutFile(gh, "index.html", b64utf8(buildHostedDocument(out)), "Update site from the editor");
     PUBLISHED = clone(C); store.del(DRAFT_KEY); dirty = false; pubBusy = false;
@@ -1199,7 +1339,17 @@ async function publish() {
    Boot: render, then look for the owner's editing rights
    ===================================================================== */
 applyContent();
+route(true);
 game.boot();
+// On your own website the content lives in content.json, so a new design (index.html) never overwrites it.
+if (location.protocol !== "file:" && window.top === window.self) {
+  fetch("content.json", { cache: "no-cache" }).then(r => (r.ok ? r.json() : null)).then(j => {
+    if (!j || typeof j !== "object" || !j.site) return;
+    ensure(j);
+    if (JSON.stringify(j) === JSON.stringify(PUBLISHED)) return;
+    PUBLISHED = j; if (!dirty) { C = clone(PUBLISHED); applyContent(); route(true); }
+  }).catch(() => {});
+}
 game.setStage(0, true);
 let canEditSite = false, artifactCap = null;
 async function initEditing() {
