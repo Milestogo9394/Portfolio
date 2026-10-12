@@ -1,0 +1,298 @@
+{
+  "site": {
+    "name": "KISHORE P",
+    "title": "Long Way Round",
+    "role": "Brand Designer",
+    "headlineA": "Designing for the",
+    "headlineEm": "long way",
+    "headlineB": "round.",
+    "lede": "I design brands and interfaces that hold up on rough terrain. Ride the trail to find my projects, or skip straight to the work.",
+    "ctaPrimary": "See the work",
+    "ctaSecondary": "Get in touch",
+    "navWork": "Work",
+    "navAbout": "About",
+    "navContact": "Contact",
+    "accent": "#ff9999",
+    "footer": "Designed between rides.",
+    "tagline": "Keep the shiny side up"
+  },
+  "rider": {
+    "image": "img/rider.webp",
+    "bike": "Triumph Scrambler 1200"
+  },
+  "stages": [
+    {
+      "name": "Key Monastery",
+      "region": "Spiti",
+      "altitude": 4166,
+      "mode": "day",
+      "image": "img/stage-key.webp",
+      "focus": 0.7
+    },
+    {
+      "name": "Kaza",
+      "region": "Spiti",
+      "altitude": 3800,
+      "mode": "day",
+      "image": "img/stage-kaza.webp",
+      "focus": 0.66
+    },
+    {
+      "name": "Umling La",
+      "region": "Ladakh",
+      "altitude": 5798,
+      "mode": "night",
+      "image": "img/stage-umlingla.webp",
+      "focus": 0.5
+    },
+    {
+      "name": "Hanle Observatory",
+      "region": "Ladakh",
+      "altitude": 4500,
+      "mode": "night",
+      "image": "img/stage-hanle.webp",
+      "focus": 0.6
+    },
+    {
+      "name": "Pangong Tso",
+      "region": "Ladakh",
+      "altitude": 4225,
+      "mode": "day",
+      "image": "img/stage-pangong.webp",
+      "focus": 0.5
+    },
+    {
+      "name": "Thiksey Monastery",
+      "region": "Ladakh",
+      "altitude": 3600,
+      "mode": "day",
+      "image": "img/stage-thiksey.webp",
+      "focus": 0.72
+    }
+  ],
+  "work": {
+    "eyebrow": "Selected work · 2023 – 2026",
+    "heading": "The roadbook",
+    "note": "Every project is a flag on the trail up top, and each one has its own page. Sample projects for now: replace them from the editor.",
+    "caseLabel": "Case study",
+    "moreHeading": "More work",
+    "backLabel": "All work"
+  },
+  "projects": [
+    {
+      "title": "Basecamp",
+      "initials": "Bc",
+      "type": "UI / UX",
+      "year": "2026",
+      "length": "10 weeks",
+      "description": "Trip-planning app for weekend riders: routes, fuel stops, weather.",
+      "link": "",
+      "cover": "",
+      "results": [
+        {
+          "value": "400",
+          "label": "Beta riders"
+        },
+        {
+          "value": "−70%",
+          "label": "Time to plan a route"
+        },
+        {
+          "value": "4.8",
+          "label": "App store rating"
+        }
+      ],
+      "gallery": [],
+      "client": "Sample client · Basecamp Rides",
+      "role": "Product designer",
+      "team": "1 designer, 2 engineers",
+      "intro": "A trip-planning app that helps weekend riders plan routes, fuel stops and weather windows in one place.",
+      "overview": "Sample text: replace this with your own story. Basecamp started as a spreadsheet a riding group shared before every trip.",
+      "challenge": "Riders were juggling maps, weather apps and group chats. Fuel ranges and closed passes caught people out.",
+      "approach": "I interviewed 12 riders, mapped how they plan a weekend, and prototyped a single timeline view that combines route, fuel and weather.",
+      "outcome": "The beta launched to 400 riders. Planning a two-day route dropped from an evening to about 20 minutes.",
+      "linkLabel": ""
+    },
+    {
+      "title": "Ridgeline Coffee",
+      "initials": "Rc",
+      "type": "Branding",
+      "year": "2025",
+      "length": "6 weeks",
+      "description": "Identity and packaging for a small-batch mountain roastery.",
+      "link": "",
+      "cover": "",
+      "results": [
+        {
+          "value": "3",
+          "label": "Cafés stocking it"
+        },
+        {
+          "value": "+35%",
+          "label": "Online sales in 3 months"
+        }
+      ],
+      "gallery": [],
+      "client": "Sample client · Ridgeline Coffee",
+      "role": "Brand designer",
+      "team": "Solo",
+      "intro": "Identity and packaging for a small-batch roastery working with high-altitude farms.",
+      "overview": "Sample text: replace this with your own story.",
+      "challenge": "The roastery needed to stand out on crowded café shelves without looking like every other craft brand.",
+      "approach": "Contour lines from each farm's map became the pattern system, with one colour per altitude band.",
+      "outcome": "Launched across 3 cafés and an online shop.",
+      "linkLabel": ""
+    },
+    {
+      "title": "Fieldnotes",
+      "initials": "Fn",
+      "type": "Editorial",
+      "year": "2025",
+      "length": "8 weeks",
+      "description": "Editorial design system for a travel magazine's print and web issues.",
+      "link": "",
+      "cover": "",
+      "results": [],
+      "gallery": [],
+      "client": "",
+      "role": "",
+      "team": "",
+      "intro": "Editorial design system for a travel magazine's print and web issues.",
+      "overview": "Sample text: write the story of this project here. Separate paragraphs with a blank line.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "Gearloop",
+      "initials": "Gl",
+      "type": "Web design",
+      "year": "2024",
+      "length": "12 weeks",
+      "description": "Marketplace for buying and selling used riding gear.",
+      "link": "",
+      "cover": "",
+      "results": [],
+      "gallery": [],
+      "client": "",
+      "role": "",
+      "team": "",
+      "intro": "Marketplace for buying and selling used riding gear.",
+      "overview": "Sample text: write the story of this project here. Separate paragraphs with a blank line.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "Monsoon Series",
+      "initials": "Ms",
+      "type": "Illustration",
+      "year": "2024",
+      "length": "4 weeks",
+      "description": "Poster series on the first rains, screen-printed in three colours.",
+      "link": "",
+      "cover": "",
+      "results": [],
+      "gallery": [],
+      "client": "",
+      "role": "",
+      "team": "",
+      "intro": "Poster series on the first rains, screen-printed in three colours.",
+      "overview": "Sample text: write the story of this project here. Separate paragraphs with a blank line.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "linkLabel": ""
+    },
+    {
+      "title": "Trailhead",
+      "initials": "Th",
+      "type": "Product",
+      "year": "2023",
+      "length": "9 weeks",
+      "description": "Operations dashboard for a motorcycle tour company.",
+      "link": "",
+      "cover": "",
+      "results": [],
+      "gallery": [],
+      "client": "",
+      "role": "",
+      "team": "",
+      "intro": "Operations dashboard for a motorcycle tour company.",
+      "overview": "Sample text: write the story of this project here. Separate paragraphs with a blank line.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "linkLabel": ""
+    }
+  ],
+  "about": {
+    "eyebrow": "About",
+    "heading": "Two kinds of terrain",
+    "lead": "I'm a designer who works the way I ride: plan the route, read the ground, and adjust when the trail washes out.",
+    "body": "Most of my work is brand identity and digital product design for small teams who need things to look sharp and work hard. Long rides taught me to pack light, so my design does the same: fewer parts, each one earning its place.\n\nOff the clock I'm on a Triumph Scrambler 1200, usually heading somewhere the tarmac gives up.",
+    "skills": "Brand identity, UI / UX, Design systems, Prototyping, Illustration, Figma",
+    "logTitle": "Ride log",
+    "log": [
+      {
+        "label": "Machine",
+        "value": "Triumph Scrambler 1200"
+      },
+      {
+        "label": "Riding since",
+        "value": "Add your year"
+      },
+      {
+        "label": "Highest pass",
+        "value": "Add your highest"
+      },
+      {
+        "label": "Longest day",
+        "value": "Add your longest"
+      },
+      {
+        "label": "Favourite route",
+        "value": "Add your route"
+      },
+      {
+        "label": "Always packed",
+        "value": "Tyre plugs, sketchbook"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Got a project?",
+    "headingEm": "Let's ride.",
+    "text": "Open to freelance brand and product design work, and always happy to hear about a good route.",
+    "email": "hello@yourname.com",
+    "socials": [
+      {
+        "label": "Behance",
+        "url": "https://www.behance.net/"
+      },
+      {
+        "label": "Dribbble",
+        "url": "https://dribbble.com/"
+      },
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/"
+      }
+    ]
+  },
+  "reward": {
+    "enabled": true,
+    "kicker": "Route complete",
+    "heading": "You've earned a free design consultation",
+    "text": "30 minutes with me on your brand, product or website. Pick a time that suits you and I'll get a confirmation straight away.",
+    "button": "Book your free call",
+    "bookingUrl": ""
+  }
+}
